@@ -1,361 +1,277 @@
-# 📑 Project Index & Navigation Guide
+# Project Index
 
-## 🎯 Start Here!
+## Getting Started
 
-**New to the project?** Read these in order:
+If you're new to the project, read these files in the following order:
 
-1. **[QUICK_START.md](QUICK_START.md)** - Get running in 5 minutes ⚡
-2. **[SETUP.md](SETUP.md)** - Detailed setup instructions
-3. **[README.md](README.md)** - Full project documentation
-4. **[COMPLETION_SUMMARY.md](COMPLETION_SUMMARY.md)** - What's included
-
----
-
-## 📚 Documentation Files
-
-| File | Purpose | Read Time |
-|------|---------|-----------|
-| [QUICK_START.md](QUICK_START.md) | 5-minute quickstart guide | 2 min |
-| [SETUP.md](SETUP.md) | Complete setup instructions | 10 min |
-| [README.md](README.md) | Full documentation & architecture | 20 min |
-| [COMPLETION_SUMMARY.md](COMPLETION_SUMMARY.md) | Project completion details | 10 min |
-| [INDEX.md](INDEX.md) | This file | 3 min |
+1. `QUICK_START.md` – Quick setup guide
+2. `SETUP.md` – Detailed installation instructions
+3. `README.md` – Project documentation
+4. `COMPLETION_SUMMARY.md` – Project summary
 
 ---
 
-## 🗂️ Directory Structure & Files
+# Documentation
 
-### Root Level Files
+| File                    | Description                    |
+| ----------------------- | ------------------------------ |
+| `QUICK_START.md`        | Quick setup guide              |
+| `SETUP.md`              | Installation and configuration |
+| `README.md`             | Complete project documentation |
+| `COMPLETION_SUMMARY.md` | Project implementation summary |
+| `INDEX.md`              | Project navigation guide       |
 
-```
-📄 QUICK_START.md                    ← START HERE! (⚡ 5 min to results)
-📄 README.md                         ← Full documentation
-📄 SETUP.md                          ← Detailed setup guide
-📄 COMPLETION_SUMMARY.md             ← What's included
-📄 requirements.txt                  ← Python dependencies
-📄 run_system.py                     ← Main launcher (one-click demo)
-📄 validate_project.py               ← Project validation script
-📄 INDEX.md                          ← Navigation guide (you are here)
-```
+---
 
-### Core Implementation
+# Project Structure
 
-#### `/models/` - Neural Network Architecture
-```
-📄 model.py                          ← Multi-Task U-Net implementation
-   - Encoder-Decoder architecture
-   - Segmentation head (binary masks)
-   - Classification head (4 classes)
-   - ~2.15M parameters
-```
+## Root Files
 
-#### `/federated/` - Federated Learning System
-```
-📄 server.py                         ← Flower server with FedAvg
-   - Handles client aggregation
-   - Model evaluation
-   - Weight averaging
-
-📄 client.py                         ← Flower client implementation
-   - Local training loop
-   - Privacy-preserving updates
-   - Client-server communication
-
-📄 federated_utils.py                ← Utilities & Loss Functions
-   - Dice Loss (segmentation)
-   - Cross-Entropy Loss (classification)
-   - Metrics: Dice, Jaccard, Accuracy
-   - Model serialization
+```text
+QUICK_START.md
+README.md
+SETUP.md
+COMPLETION_SUMMARY.md
+INDEX.md
+requirements.txt
+run_system.py
+validate_project.py
 ```
 
-#### `/utils/` - Utility Functions
-```
-📄 normalization.py                  ← Stain color normalization
-   - Reinhard method
-   - Handles H&E color variation
-   - Multi-hospital robustness
+## Models
 
-📄 image_processing.py               ← Image preprocessing
-   - Dataset handling
-   - Augmentation pipeline
-   - Tensor conversion
+`models/model.py`
 
-📄 mock_data_generator.py            ← Synthetic data generation
-   - Generates realistic H&E images
-   - Tissue-specific patterns
-   - No real patient data needed
-```
+* Multi-Task U-Net implementation
+* Encoder-decoder architecture
+* Segmentation head
+* Classification head
 
-#### `/ui/` - User Interfaces
-```
-📄 streamlit_app.py                  ← Interactive dashboard
-   - Image upload
-   - Real-time inference
-   - Visualization overlays
-   - Metrics display
-```
+## Federated Learning
 
-#### `/notebooks/` - Jupyter Analysis
-```
-📄 testing_and_visualization.ipynb   ← Defense presentation notebook
-   - Model loading
-   - Inference on test data
-   - Segmentation visualizations
-   - Dice & Jaccard metrics
-   - Confusion matrix
-   - Privacy analysis
-```
+`federated/server.py`
 
-#### `/data/` - Dataset Directory
-```
-📁 data/
-   └── mock_dataset/                 ← Auto-generated synthetic H&E images
-       ├── tumor/
-       ├── inflammatory/
-       ├── stroma/
-       └── necrosis/
+* Flower server
+* Federated Averaging (FedAvg)
+* Global model aggregation
+
+`federated/client.py`
+
+* Local model training
+* Client-server communication
+* Model updates
+
+`federated/federated_utils.py`
+
+* Loss functions
+* Performance metrics
+* Model serialization
+
+## Utilities
+
+`utils/normalization.py`
+
+* Reinhard stain normalization
+
+`utils/image_processing.py`
+
+* Image preprocessing
+* Data augmentation
+
+`utils/mock_data_generator.py`
+
+* Synthetic dataset generation
+
+## User Interface
+
+`ui/streamlit_app.py`
+
+* Image upload
+* Prediction visualization
+* Performance metrics
+
+## Notebook
+
+`notebooks/testing_and_visualization.ipynb`
+
+* Model evaluation
+* Visualization
+* Performance metrics
+
+## Dataset
+
+```text
+data/
+└── mock_dataset/
 ```
 
 ---
 
-## 🚀 How to Get Started
+# Running the Project
 
-### Option 1: FASTEST (⚡ 5 minutes)
+## Quick Start
 
-```powershell
-cd nuclei_fyp_project
+```bash
 pip install -r requirements.txt
 python run_system.py
 jupyter notebook notebooks/testing_and_visualization.ipynb
 ```
 
-### Option 2: STEP-BY-STEP (📖 20 minutes)
+## Step-by-Step
 
-1. Read [QUICK_START.md](QUICK_START.md)
-2. Follow [SETUP.md](SETUP.md)
-3. Run `python run_system.py`
-4. View results in Jupyter
+1. Read `QUICK_START.md`.
+2. Follow `SETUP.md`.
+3. Run:
 
-### Option 3: DETAILED (📚 1 hour)
-
-1. Read [README.md](README.md) completely
-2. Review [COMPLETION_SUMMARY.md](COMPLETION_SUMMARY.md)
-3. Study code in `/models/`, `/federated/`, `/utils/`
-4. Run entire demo
-5. Analyze Jupyter notebook
-
----
-
-## 📖 Code Organization
-
-### By Functionality
-
-**Deep Learning Model**
-- `models/model.py` - Architecture definition
-
-**Federated Learning**
-- `federated/server.py` - Server-side aggregation
-- `federated/client.py` - Client-side training
-- `federated/federated_utils.py` - Utilities
-
-**Data & Images**
-- `utils/mock_data_generator.py` - Synthetic data
-- `utils/image_processing.py` - Preprocessing
-- `utils/normalization.py` - Stain normalization
-
-**User Interfaces**
-- `ui/streamlit_app.py` - Interactive dashboard
-- `notebooks/testing_and_visualization.ipynb` - Analysis
-
-**System Management**
-- `run_system.py` - Launcher
-- `validate_project.py` - Validator
-- `requirements.txt` - Dependencies
-
-### By Language
-
-**Python (.py)**
-- 12 source files
-- ~4,500+ lines of code
-- Fully documented
-
-**Jupyter Notebook (.ipynb)**
-- 1 analysis notebook
-- 12 executable cells
-- Defense-ready
-
-**Markdown (.md)**
-- 5 documentation files
-- 50+ pages of guides
-
----
-
-## 🎯 Use Case Navigation
-
-### "I want to run the demo"
-→ [QUICK_START.md](QUICK_START.md)
-
-### "I need setup help"
-→ [SETUP.md](SETUP.md)
-
-### "I want to understand architecture"
-→ [README.md](README.md) + `models/model.py`
-
-### "I need to prepare for defense"
-→ [COMPLETION_SUMMARY.md](COMPLETION_SUMMARY.md)
-
-### "I want to modify the code"
-→ Read corresponding `.py` file + inline comments
-
-### "I want to troubleshoot"
-→ [SETUP.md](SETUP.md) Troubleshooting section
-
-### "I want to understand privacy"
-→ [README.md](README.md) Privacy Architecture section
-
-### "I want metrics and results"
-→ `notebooks/testing_and_visualization.ipynb`
-
----
-
-## ✅ Quality Checklist
-
-- [x] All files present
-- [x] Code well-commented
-- [x] Documentation complete
-- [x] Privacy documented
-- [x] Examples provided
-- [x] Demo working
-- [x] Validation script included
-- [x] Multiple guides (quick/detailed)
-- [x] Defense-ready
-
----
-
-## 📊 File Statistics
-
-| Category | Count |
-|----------|-------|
-| Python Files | 12 |
-| Jupyter Notebooks | 1 |
-| Documentation Files | 5 |
-| Total Lines of Code | 4,500+ |
-| Code Comments | Extensive |
-| Docstrings | All functions |
-
----
-
-## 🔐 Privacy Features
-
-**Find privacy explanations in:**
-- [README.md](README.md) - Privacy Architecture section
-- `federated/federated_utils.py` - "PRIVACY NOTE:" comments
-- `federated/server.py` - Server-side privacy
-- `federated/client.py` - Client-side privacy
-- `models/model.py` - Model design comments
-
----
-
-## 🎓 For Your Defense
-
-**Recommended Flow:**
-
-1. **Show Architecture**
-   - Open [README.md](README.md)
-   - Run `python models/model.py` to show shapes
-   - Explain encoder-decoder design
-
-2. **Run Live Demo**
-   - Execute `python run_system.py`
-   - Show server/client logs
-   - Explain federated rounds
-
-3. **Show Results**
-   - Open Jupyter notebook
-   - Run cells sequentially
-   - Display metrics and visualizations
-
-4. **Explain Privacy**
-   - Reference [README.md](README.md) Privacy section
-   - Show code: "weights only" is shared
-   - Discuss regulatory compliance
-
-5. **Interactive Demo**
-   - Run `streamlit run ui/streamlit_app.py`
-   - Upload test image
-   - Show real-time inference
-
----
-
-## 🔗 Quick Links
-
-| Need | File | Action |
-|------|------|--------|
-| 5-min guide | QUICK_START.md | Read |
-| Setup help | SETUP.md | Follow steps |
-| Full docs | README.md | Read |
-| Project status | COMPLETION_SUMMARY.md | Review |
-| Run demo | run_system.py | `python run_system.py` |
-| Check setup | validate_project.py | `python validate_project.py` |
-| View results | testing_and_visualization.ipynb | `jupyter notebook` |
-| Interactive UI | streamlit_app.py | `streamlit run` |
-| Model code | models/model.py | Study |
-| Privacy code | federated/federated_utils.py | Study |
-
----
-
-## 📈 Typical Usage Timeline
-
-| Time | Activity |
-|------|----------|
-| 0-5 min | Read QUICK_START.md |
-| 5-10 min | Run `pip install` |
-| 10-20 min | Execute `python run_system.py` |
-| 20-25 min | View Jupyter notebook |
-| 25-30 min | Review [README.md](README.md) |
-| 30+ | Customize and experiment |
-
----
-
-## 🎊 You're All Set!
-
-Everything you need is here. Start with:
-
-```powershell
-# 1. Install
-pip install -r requirements.txt
-
-# 2. Run
+```bash
 python run_system.py
+```
 
-# 3. View results
+4. Open:
+
+```bash
 jupyter notebook notebooks/testing_and_visualization.ipynb
 ```
 
-**Questions?** Check the relevant documentation file above.
+---
+
+# Project Organization
+
+## Deep Learning
+
+* `models/model.py`
+
+## Federated Learning
+
+* `federated/server.py`
+* `federated/client.py`
+* `federated/federated_utils.py`
+
+## Image Processing
+
+* `utils/image_processing.py`
+* `utils/normalization.py`
+* `utils/mock_data_generator.py`
+
+## User Interface
+
+* `ui/streamlit_app.py`
+
+## System Files
+
+* `run_system.py`
+* `validate_project.py`
+* `requirements.txt`
 
 ---
 
-## 📝 Documentation Map
+# Common Tasks
 
-```
-START
-  ↓
-QUICK_START.md (overview)
-  ↓
-SETUP.md (detailed steps)
-  ↓
-run_system.py (execute)
-  ↓
-testing_and_visualization.ipynb (results)
-  ↓
-README.md (deep dive)
-  ↓
-Source code (.py files)
+### Run the project
+
+See `QUICK_START.md`.
+
+### Install dependencies
+
+See `SETUP.md`.
+
+### Understand the project
+
+Read `README.md`.
+
+### Review implementation details
+
+Read `COMPLETION_SUMMARY.md`.
+
+### Modify the model
+
+Edit `models/model.py`.
+
+### View project results
+
+Open `notebooks/testing_and_visualization.ipynb`.
+
+---
+
+# Project Statistics
+
+| Category            | Count |
+| ------------------- | ----: |
+| Python Files        |    12 |
+| Jupyter Notebooks   |     1 |
+| Documentation Files |     5 |
+
+---
+
+# Privacy
+
+Privacy-related implementation can be found in:
+
+* `README.md`
+* `federated/server.py`
+* `federated/client.py`
+* `federated/federated_utils.py`
+
+---
+
+# Demonstration
+
+For a project demonstration:
+
+1. Explain the model architecture.
+2. Run `python run_system.py`.
+3. Show the evaluation notebook.
+4. Explain the federated learning workflow.
+5. Launch the Streamlit application.
+
+```bash
+streamlit run ui/streamlit_app.py
 ```
 
 ---
 
-**Happy coding!** 🚀
+# Quick Reference
 
-For any questions, check the documentation files above - everything is explained in detail!
+| Task                  | File                              |
+| --------------------- | --------------------------------- |
+| Quick setup           | `QUICK_START.md`                  |
+| Installation          | `SETUP.md`                        |
+| Documentation         | `README.md`                       |
+| Project summary       | `COMPLETION_SUMMARY.md`           |
+| Run project           | `run_system.py`                   |
+| Validate setup        | `validate_project.py`             |
+| View results          | `testing_and_visualization.ipynb` |
+| Streamlit application | `ui/streamlit_app.py`             |
+
+---
+
+# Typical Workflow
+
+1. Install the dependencies.
+2. Run the project.
+3. View the notebook results.
+4. Review the documentation.
+5. Explore or modify the source code.
+
+---
+
+# Documentation Flow
+
+```text
+QUICK_START.md
+        │
+        ▼
+SETUP.md
+        │
+        ▼
+run_system.py
+        │
+        ▼
+testing_and_visualization.ipynb
+        │
+        ▼
+README.md
+        │
+        ▼
+Source Code
+```
