@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+dataset/
+*.npy
+*.pth
+*.pt
+venv/
+.venv/
+.idea/
+.vscode/
+.ipynb_checkpoints/
