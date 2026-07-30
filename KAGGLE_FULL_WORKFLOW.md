@@ -545,24 +545,6 @@ num_epochs = 1
 
 ---
 
-## Making Notebook Public (Optional)
 
-To share your notebook with others:
 
-1. Click **Share** (top right)
-2. Set to **Public**
-3. Get shareable link
-4. Anyone with link can view or run
-
----
-
-## Next Steps
-
-After successful Kaggle training:
-
-1. ✅ Download trained model
-2. ✅ Try different configurations
-3. ✅ Use model for inference on new images
-4. ✅ Modify architecture for better performance
-5. ✅ Use real data instead of synthetic (optional)
 
