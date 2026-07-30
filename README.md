@@ -2,7 +2,7 @@
 
 **Final Year Project (FYP) - Complete Research-Grade Implementation**
 
-## 🎯 Project Overview
+##  Project Overview
 
 This project implements a privacy-preserving federated learning system for simultaneous segmentation and classification of nuclei in H&E histopathology images. The system enables collaborative training across multiple institutions without requiring centralized data collection.
 
@@ -16,7 +16,7 @@ This project implements a privacy-preserving federated learning system for simul
 - **Synthetic Data Generation**: Demo-ready without large datasets
 - **Flower Framework**: Industry-standard federated learning framework
 
-## 📁 Directory Structure
+##  Directory Structure
 
 ```
 nuclei_fyp_project/
@@ -48,7 +48,7 @@ nuclei_fyp_project/
 └── README.md                      # This file
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Installation
 
@@ -74,10 +74,10 @@ python run_system.py --num_rounds 10 --num_clients 3
 ```
 
 This will:
-- ✅ Start Flower server on localhost:8080
-- ✅ Launch 2 federated learning clients
-- ✅ Execute 5 federated rounds
-- ✅ Save global model to `models/global_weights.pth`
+-  Start Flower server on localhost:8080
+-  Launch 2 federated learning clients
+-  Execute 5 federated rounds
+-  Save global model to `models/global_weights.pth`
 
 ### 3. View Results
 
@@ -91,7 +91,7 @@ jupyter notebook notebooks/testing_and_visualization.ipynb
 streamlit run ui/streamlit_app.py
 ```
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Multi-Task U-Net
 
@@ -127,12 +127,12 @@ streamlit run ui/streamlit_app.py
 ```
 
 **Privacy Guarantee:**
-- 🔒 Raw training data stays on client devices
-- 🔐 Only model weights transmitted to server
-- ✅ Server cannot access gradients or batch statistics
-- ✅ No patient data centralization required
+-  Raw training data stays on client devices
+-  Only model weights transmitted to server
+-  Server cannot access gradients or batch statistics
+-  No patient data centralization required
 
-## 📊 Key Components
+##  Key Components
 
 ### 1. **model.py** - Multi-Task U-Net
 - Shared encoder-decoder backbone
@@ -171,7 +171,7 @@ streamlit run ui/streamlit_app.py
 - Real-time metrics display
 - Classification probability charts
 
-## 📈 Metrics & Evaluation
+##  Metrics & Evaluation
 
 ### Segmentation Metrics
 - **Dice Coefficient**: Overlap between predicted and ground truth masks
@@ -184,7 +184,7 @@ streamlit run ui/streamlit_app.py
 - **Confusion Matrix**: Classification breakdown
 - **Confidence Scores**: Probability estimates per class
 
-## 🔒 Privacy Architecture
+##  Privacy Architecture
 
 ### Federated Learning Privacy Properties
 
@@ -228,7 +228,7 @@ Expected metrics on test data:
 - **Jaccard Index**: 0.60-0.75
 - **Classification Accuracy**: 0.80-0.90
 
-## 🛠️ Customization
+##  Customization
 
 ### Modify Number of Clients
 ```bash
@@ -254,7 +254,7 @@ Edit `federated/server.py` and `federated/client.py`:
 - Batch size
 - Aggregation strategy
 
-## 📝 Usage Examples
+##  Usage Examples
 
 ### Example 1: Run Default Demo
 ```bash
@@ -292,7 +292,7 @@ weights = model_to_weights(model)
 # Use for inference
 ```
 
-## 🧪 Testing & Validation
+##  Testing & Validation
 
 ### Run Notebook Tests
 ```bash
@@ -311,7 +311,7 @@ print(f"Segmentation: {seg_out.shape}")
 print(f"Classification: {cls_out.shape}")
 ```
 
-## 📊 Expected Output
+##  Expected Output
 
 After running `python run_system.py`:
 
@@ -333,7 +333,7 @@ Generated files:
 - Jupyter notebook outputs (charts, metrics)
 - Streamlit cache files
 
-## 🎓 For Your Defense
+##  For Your Defense
 
 ### Presentation Points
 
@@ -374,7 +374,7 @@ The `testing_and_visualization.ipynb` includes:
 - Per-tissue metrics
 - Privacy summary
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Issue: Port 8080 already in use
 ```bash
@@ -396,7 +396,7 @@ python run_system.py --server_address 127.0.0.1:8081
 pip install -r requirements.txt -U
 ```
 
-## 📞 Support & Questions
+##  Support & Questions
 
 For questions about:
 - **Federated Learning**: See `federated/` documentation
@@ -404,7 +404,7 @@ For questions about:
 - **Privacy**: See README privacy sections and code comments
 - **Streamlit Dashboard**: See `ui/streamlit_app.py`
 
-## 📜 License & Citation
+##  License & Citation
 
 This project is designed for academic/research purposes.
 
@@ -418,35 +418,27 @@ If you use this code, please cite:
 }
 ```
 
-## ✅ Final Checklist for Defense
+##  Final Checklist for Defense
 
-- [ ] All files created successfully
-- [ ] `python run_system.py` runs without errors
-- [ ] `models/global_weights.pth` generated
-- [ ] Jupyter notebook executes completely
-- [ ] Streamlit dashboard launches
-- [ ] Metrics computed and visualized
-- [ ] Privacy guarantees documented
-- [ ] Code well-commented
-- [ ] README comprehensive
-- [ ] All dependencies in requirements.txt
+-  All files created successfully
+-  python run_system.py` runs without errors
+-  models/global_weights.pth` generated
+-  Jupyter notebook executes completely
+-  Streamlit dashboard launches
+-  Metrics computed and visualized
+-  Privacy guarantees documented
+-  Code well-commented
+-  README comprehensive
+-  All dependencies in requirements.txt
 
-## 🎉 Congratulations!
+##  Congratulations
 
 You now have a complete, research-grade federated learning system for privacy-preserving nuclei segmentation and classification. This demonstrates:
 
-✅ Advanced deep learning (Multi-Task U-Net)
-✅ Federated learning (FedAvg aggregation)
-✅ Privacy preservation (no data centralization)
-✅ Production code (error handling, logging)
-✅ Research presentation (Jupyter, visualizations)
+ Advanced deep learning (Multi-Task U-Net)
+ Federated learning (FedAvg aggregation)
+ Privacy preservation (no data centralization)
+ Production code (error handling, logging)
+ Research presentation (Jupyter, visualizations)
 
-**Good luck with your Final Year Project!** 🚀
 
----
-
-**Project Status**: ✅ Complete & Ready for Defense
-
-**Last Updated**: 2024
-
-**Maintainer**: Lead AI Research Engineer
