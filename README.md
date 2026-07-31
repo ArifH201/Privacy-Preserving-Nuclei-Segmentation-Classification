@@ -1,4 +1,4 @@
-# CELL vISION :Privacy-Preserving Segmentation and Classification of Nuclei using Federated Learning
+# CELL VISION :Privacy-Preserving Segmentation and Classification of Nuclei using Federated Learning
 
 **Final Year Project (FYP) - Complete Research-Grade Implementation**
 
