@@ -1,4 +1,4 @@
-# Privacy-Preserving Segmentation and Classification of Nuclei using Federated Learning
+# CELL CISION :Privacy-Preserving Segmentation and Classification of Nuclei using Federated Learning
 
 **Final Year Project (FYP) - Complete Research-Grade Implementation**
 
